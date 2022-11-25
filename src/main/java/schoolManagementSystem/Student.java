@@ -78,5 +78,21 @@ public class Student {
         }
     }
 
+    public static void search(){
+        System.out.println("Student Name: ");
+        String sName = input.next();
+        for (Map.Entry<String, Student> data : database.entrySet()){
+            if (sName.equalsIgnoreCase(data.getValue().studentName)){
+                toString(data);}
+        }
+        System.out.println();
+        makeAChoice();
+    }
+
+    public static void toString(Map.Entry<String, Student> data){
+        System.out.println("Student ID \t\t Student Name \t\t Sutdent Age");
+        System.out.println(data.getValue().studentID + "\t\t\t | " + data.getValue().studentName + "\t\t\t | " + data.getValue().studentAge);
+    }
+
 
 }

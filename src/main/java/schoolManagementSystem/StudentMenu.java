@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class StudentMenu {
     public static void studentMenu(){
         System.out.println("*".repeat(15) +  "# Welcome to the Student Menu #" + "*".repeat(15) +"\n1 - Adding\n" +
-                "2 - Show Students\n" +
-                "3 - Listing\n" +
+                "2 - Listing\n" +
+                "3 - Seach\n" +
                 "4 - Deleting\n" +
                 "5 - Home\n" +
                 "Q - Exit\n");
@@ -25,13 +25,13 @@ public class StudentMenu {
                 Student.getStudentList();
                 break;
             }else if (choice.equals("3")) {
-                TeacherMenu.teacherMenu();;
+                Student.search();
                 break;
             }else if (choice.equals("4")) {
-                TeacherMenu.teacherMenu();;
+                TeacherMenu.teacherMenu();
                 break;
             }else if (choice.equals("5")) {
-                TeacherMenu.teacherMenu();;
+                TeacherMenu.teacherMenu();
                 break;
             }else {
                 System.out.println("Invalid Section");
