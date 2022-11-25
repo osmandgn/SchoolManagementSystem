@@ -55,7 +55,7 @@ public class Student {
     }
 
     public static void getStudentList() {
-        System.out.println("*".repeat(40));
+        System.out.println("*".repeat(50));
         System.out.println("Student ID \t\t Student Name \t\t Sutdent Age");
         for (Map.Entry<String, Student> students : database.entrySet()) {
             System.out.println(students.getValue().studentID + "\t\t\t | " + students.getValue().studentName + "\t\t\t | " + students.getValue().studentAge);
