@@ -4,6 +4,13 @@ import java.util.*;
 
 public class Student {
 
+    public static final String red = "\u001B[31m";
+    public static final String green = "\u001B[32m";
+    public static final String yellow = "\u001B[33m";
+    public static final String blue = "\u001B[34m";
+    public static final String purple = "\u001B[35m";
+    public static final String white = "\u001B[37m";
+
     public static Map<String, Student> database = new HashMap<>();
     public static Scanner input = new Scanner(System.in);
 
@@ -48,6 +55,7 @@ public class Student {
     }
 
     public static void getStudentList() {
+        System.out.println("*".repeat(40));
         System.out.println("Student ID \t\t Student Name \t\t Sutdent Age");
         for (Map.Entry<String, Student> students : database.entrySet()) {
             System.out.println(students.getValue().studentID + "\t\t\t | " + students.getValue().studentName + "\t\t\t | " + students.getValue().studentAge);
@@ -62,7 +70,7 @@ public class Student {
 
 
     public static void makeAChoice() {
-        System.out.println("***** Make a New Choice *****\n1 - Continue Adding Students\n2 - Return Student Menu\n3 - Return Homepage \nPress Any to Quite");
+        System.out.println(yellow +"***** Make a New Choice *****\n1 - Continue Adding Students\n2 - Return Student Menu\n3 - Return Homepage \nPress Any to Quite");
         String choice = input.next();
         if (choice.equals("1")) {
             addStudent();
@@ -79,11 +87,17 @@ public class Student {
     }
 
     public static void search(){
-        System.out.println("Student Name: ");
+        System.out.println("Input Student Name: ");
         String sName = input.next();
+        boolean finder = false;
         for (Map.Entry<String, Student> data : database.entrySet()){
             if (sName.equalsIgnoreCase(data.getValue().studentName)){
-                toString(data);}
+                finder = true;
+                toString(data);
+            }
+        }
+        if (!finder){
+            System.out.println("Student not found");
         }
         System.out.println();
         makeAChoice();
@@ -92,6 +106,23 @@ public class Student {
     public static void toString(Map.Entry<String, Student> data){
         System.out.println("Student ID \t\t Student Name \t\t Sutdent Age");
         System.out.println(data.getValue().studentID + "\t\t\t | " + data.getValue().studentName + "\t\t\t | " + data.getValue().studentAge);
+    }
+
+    public static void deleting(){
+        System.out.println("Input Student Name: ");
+        String sName = input.next();
+        for (Map.Entry<String, Student> data : database.entrySet()){
+            if (sName.equalsIgnoreCase(data.getValue().studentName)){
+                database.remove(data.getKey());
+                System.out.println("Student deleted! ");
+            }else{
+                System.out.println("Student not found");
+            }
+
+        }
+        System.out.println();
+        makeAChoice();
+
     }
 
 

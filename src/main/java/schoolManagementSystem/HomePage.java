@@ -3,9 +3,10 @@ package schoolManagementSystem;
 import java.util.Scanner;
 
 public class HomePage {
+    public static final String green = "\u001B[32m";
 
     public static void welcome(){
-        System.out.println("*".repeat(25) + " Welcome to School Management System " + "*".repeat(25));
+        System.out.println(green+"*".repeat(25) + " Welcome to School Management System " + "*".repeat(25));
         System.out.println("1 - Student Menu\n2 - Teacher Menu\nQ - Quit");
         Scanner input = new Scanner(System.in);
         System.out.println("\nPlease make a choice: ");

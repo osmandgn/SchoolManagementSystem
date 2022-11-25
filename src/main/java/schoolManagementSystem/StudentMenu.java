@@ -3,8 +3,9 @@ package schoolManagementSystem;
 import java.util.Scanner;
 
 public class StudentMenu {
+    public static final String blue = "\u001B[34m";
     public static void studentMenu(){
-        System.out.println("*".repeat(15) +  "# Welcome to the Student Menu #" + "*".repeat(15) +"\n1 - Adding\n" +
+        System.out.println(blue+"*".repeat(15) +  "# Welcome to the Student Menu #" + "*".repeat(15) +"\n1 - Adding\n" +
                 "2 - Listing\n" +
                 "3 - Seach\n" +
                 "4 - Deleting\n" +
@@ -28,10 +29,10 @@ public class StudentMenu {
                 Student.search();
                 break;
             }else if (choice.equals("4")) {
-                TeacherMenu.teacherMenu();
+                Student.deleting();
                 break;
             }else if (choice.equals("5")) {
-                TeacherMenu.teacherMenu();
+                HomePage.welcome();
                 break;
             }else {
                 System.out.println("Invalid Section");
