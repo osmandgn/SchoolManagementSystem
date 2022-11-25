@@ -22,7 +22,7 @@ public class StudentMenu {
                 Student.addStudent();
                 break;
             } else if (choice.equals("2")) {
-
+                Student.getStudentList();
                 break;
             }else if (choice.equals("3")) {
                 TeacherMenu.teacherMenu();;

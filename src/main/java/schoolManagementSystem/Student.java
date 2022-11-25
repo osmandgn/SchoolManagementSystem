@@ -20,13 +20,12 @@ public class Student {
         this.studentAge = studentAge;
         this.studentClass = studentClass;
         studentID = studentIDCreator();
-        database.put(studentIDCreator(), new Student(studentName, studentAge, studentClass));
         index++;
     }
 
 
     public static String studentIDCreator() {
-        return "" + index + (int) (Math.random() * Math.pow(10, 2));
+        return "S" + index;
     }
 
 
@@ -40,6 +39,7 @@ public class Student {
             System.out.println("Student Age");
             int age = input.nextInt();
             String ID = studentIDCreator();
+            database.put(studentIDCreator(), new Student(name, age, studentClass));
             System.out.println("Student successfully enrolled");
             makeAChoice();
 
@@ -47,10 +47,10 @@ public class Student {
 
     }
 
-    public static void studentList() {
+    public static void getStudentList() {
         System.out.println("Student ID \t\t Student Name \t\t Sutdent Age");
         for (Map.Entry<String, Student> students : database.entrySet()) {
-            System.out.println(students.getValue().studentID + "\t\t|" + students.getValue().studentName + "\t\t|" + students.getValue().studentAge);
+            System.out.println(students.getValue().studentID + "\t\t\t | " + students.getValue().studentName + "\t\t\t | " + students.getValue().studentAge);
         }
     }
 
