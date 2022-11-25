@@ -52,6 +52,8 @@ public class Student {
         for (Map.Entry<String, Student> students : database.entrySet()) {
             System.out.println(students.getValue().studentID + "\t\t\t | " + students.getValue().studentName + "\t\t\t | " + students.getValue().studentAge);
         }
+        System.out.println();
+        makeAChoice();
     }
 
     public static void searchStudent() {
