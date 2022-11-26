@@ -40,7 +40,7 @@ public class Student {
         System.out.println("*".repeat(15) + " Add New Student " + "*".repeat(15));
         while (true) {
             System.out.println("Student Name");
-            String name = input.next();
+            String name = input.nextLine();
             System.out.println("Student Class");
             String studentClass = input.next();
             System.out.println("Student Age");
